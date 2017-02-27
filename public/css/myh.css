@@ -1,0 +1,33 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.navbar-inverse{
+	background-color: black;
+	color: white;
+}
+a{
+	cursor: pointer;
+ }
+ a:hover{
+ 	background-color: gainsboro;
+ }
+ #imgSection{
+ 	width: 60%;
+ 	margin: 0 auto;
+ }
+ #imgSection li{
+ 	list-style: none;
+ 	width: 100%;
+ }
+  #imgSection li img{
+  	width: 100%;
+  }
+  abbr:hover{
+  	cursor: pointer;
+  }
+
+

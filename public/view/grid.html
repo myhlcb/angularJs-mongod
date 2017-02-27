@@ -1,0 +1,48 @@
+<div class="tab-content" ng-controller="arcListCtrl">
+	<div class="page-header">
+		<h1 class="text-center">日志列表</h1>
+	</div>
+	<!--列表的面板-->
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<section id="imgSection">
+				<ul>
+					<li class="imgbox"><img src="../images/春.jpg" alt="" /></li>
+					<li class="imgbox" style="display: none;"><img src="../images/夏.jpg" alt="" /></li>
+					<li class="imgbox" style="display: none;"><img src="../images/秋.jpg" alt="" /></li>
+					<li class="imgbox" style="display: none;"><img src="../images/冬.jpg" alt="" /></li>
+				</ul>
+			</section>
+			<!--列表-->
+			<div ng-repeat='list in lists'>
+				<img src="/upload/{{list.name}}.jpg" style="width:100px" class="img-thumbnail" />
+				<p>标题：
+					<a ng-click='article(list)'>{{list.title}}</a>
+				</p>
+				<p>{{list.post}}</p>
+				标签：
+				<a ng-repeat='tag in list.tags track by $index' style="text-decoration: none;text-align: center;" ng-click='find(tag)'><abbr title="查看标签">&nbsp{{tag}}&nbsp</abbr></a>
+				<p><span>时间: {{list.time.seconds}}</span>&nbsp &nbsp &nbsp<span>作者: {{list.name}}</span>&nbsp &nbsp<span>阅读: {{list.pv}}</span>&nbsp &nbsp &nbsp
+					<span>评论: {{list.comments.length}}</span>&nbsp &nbsp &nbsp
+					<a ng-click='like(list)'>赞: {{list.like}}</a>
+				</p>
+			</div>
+			<!--分页-->
+			<div class="page-list">
+				<ul class="pagination">
+					<li ng-class="{disabled: currentPage == 1}">
+						<a ng-click="prevPage()">&laquo;</a>
+					</li>
+					<li ng-repeat='page in pages' ng-class='{active:currentPage==page}'>
+						<a ng-click='currentP(page)'>{{page}}</a>
+					</li>
+					<li ng-class="{disabled:currentPage == total}">
+						<a ng-click="nextPage()">&raquo;</a>
+					</li>
+					<li style="margin-left: 40px; line-height: 34px; vertical-align:middle;">每页：<select style="display: inline-block;" ng-model='itemsPerpage' ng-options='option for option in perPageOptions'></select>条</li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+</div>

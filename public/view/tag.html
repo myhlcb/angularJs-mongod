@@ -1,0 +1,13 @@
+<div class="container" ng-controller='tagController'>
+	<div class="page-header">
+		<h2 class="text-left">标签</h2>
+	</div>
+	<br />
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<ul class="list-group" ng-repeat='post in posts'>
+				<li class="list-group-item"><span>时间：{{post.time.seconds}}</span>&nbsp &#x3000 标题：<a ng-click='article(post)'>{{post.title}}</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

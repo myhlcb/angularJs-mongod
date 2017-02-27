@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="page-header">
+        <h3 class="text-center">欢迎点评</h3>
+    </div>
+<div class="panel panel-success" ng-app="pageCont" ng-controller="pageContCtrl">
+    <div class="panel-heading">
+    	<div class="panel-title">作者：{{list.name}}</div>
+        <div class="panel-title">标题：{{list.title}}</div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                内容：{{list.post}}
+            </div>
+        </div>
+        <br>
+<p ng-repeat='comment in list.comments'>来自：{{comment.name}}&nbsp &nbsp<span>{{comment.content}}</span></p>
+   <form ng-submit='submitComt()' ng-show='user.name'>
+   	发布人:{{user.name}}
+   	<p>欢迎点评</p>
+   	<textarea name="content"  cols="30" rows="10" ng-model='comment.content'>
+   		
+   	</textarea>
+   	<br />
+   		<input type="submit" value="提交评论" />
+   </form>
+   <div ng-hide='user.name'><a ui-sref="login">登录</a>&nbsp &nbsp<a ui-sref='reg'>注册</a></div>
+    </div>
+</div>
+</div>

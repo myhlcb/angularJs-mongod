@@ -1,0 +1,17 @@
+<div class="container" ng-controller='addCount'>
+	<div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h1 class="text-center">写日记</h1>
+        </div>
+    <form  ng-submit='postArt()'>
+    标题：<br />
+    <input type="text" name="title" ng-model='post.title'/><br />
+    标签：<br />
+    <input type="text" name="tag1" ng-model='post.tag1'/><br />
+    <input type="text" name="tag2" ng-model='post.tag2'/><br />
+    <input type="text" name="tag3" ng-model='post.tag3'/><br />
+    正文：<br />
+    <textarea name="post" ng-model='post.post' rows="20" cols="100"></textarea><br />
+    <input type="submit" value="保存修改"/>
+</form>
+</div>

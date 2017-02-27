@@ -1,0 +1,27 @@
+<div class="tab-content" ng-controller="personCtrl">
+	<div class="page-header">
+        <h1 class="text-center">日志列表</h1>
+   </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!--列表-->
+            
+          <div ng-repeat='list in lists'>
+          <a ui-sref='upload'><abbr title="更换头像"><img src="/upload/{{list.name}}.jpg" style="width:100px" class="img-thumbnail" /></abbr></a>
+          <span><a ng-click='article(list)'>{{list.title}}</a></span>
+          <p>{{list.post}}</p>
+          <p><span>时间: {{list.time.seconds}}</span>&nbsp &nbsp &nbsp<span>作者: {{list.name}}</span>&nbsp &nbsp<span>阅读: {{list.pv}}</span>&nbsp &nbsp &nbsp<span>评论: {{list.comments.length}}</span></p>
+          <button ng-click='delete(list)'>删除</button><button ng-click='edit(list)'>修改</button>
+          </div>
+        </div>
+    </div>
+    <div class="page-list">
+            	<ul class="pagination">
+            		<li><span>&laquo;</span></li>
+            		<li ng-repeat='page in pages'><a ng-click='currentP(page)'>{{page}}</a></li>
+            		<li><span>&raquo;</span></li>
+            	</ul>
+    </div>
+
+</div>
