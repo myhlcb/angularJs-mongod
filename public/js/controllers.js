@@ -420,7 +420,7 @@ index.controller('arcListCtrl', ['$scope', '$http', '$location', function($scope
 						var url2 = '/comment/' + name + '/' + time + '/' + title
 						$scope.submitComt = function() {
 							$scope.comment.action = 'comment';
-							console.log('ssss')
+							
 							console.log($.param($scope.comment))
 							console.log(url2)
 							$http({
@@ -431,10 +431,8 @@ index.controller('arcListCtrl', ['$scope', '$http', '$location', function($scope
 									'Content-Type': 'application/x-www-form-urlencoded'
 								}
 							}).success(function(data) {
-								console.log(data)
-								window.location.reload()
+								window.location.href='/'
 							})
 						}
-					
 				})
 			})

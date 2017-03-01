@@ -1,0 +1,29 @@
+module.exports=function(grunt){
+grunt.initConfig({
+    concat:{
+        options:{
+            banner:'/*myhlcb*/\n'
+        },
+        dist:{
+            src:['public/js/jquery-1.9.1.js','public/js/angular-1.3.0.14/angular.js',
+            'public/js/angular-1.3.0.14/angular-animate.min.js',
+            'public/js/angular-ui-router.js',
+            'public/js/ui-bootstrap-tpls-0.11.0.js','public/js/bootstrap-3.0.0/js/bootstrap.js',
+            'public/js/ng-grid-2.0.12/ng-grid.debug.js',
+            'public/js/app.js','public/js/animations.js','public/js/controllers.js',
+            'public/js/filters.js','public/js/contact.js'],
+            dest:'public/js/myh-lcb.js'
+        }
+    },
+    uglify:{
+    	my_target:{
+    		files:{
+    			'public/js/myh-lcb.min.js':['public/js/myh-lcb.js']
+    		}
+    	}
+    }
+});
+grunt.loadNpmTasks('grunt-contrib-concat');
+grunt.loadNpmTasks('grunt-contrib-uglify');
+grunt.registerTask('default',['concat','uglify'])
+}

@@ -5,13 +5,13 @@
         </div>
     <form  ng-submit='postArt()'>
     标题：<br />
-    <input type="text" name="title" ng-model='post.title'/><br />
+    <input type="text" name="title" ng-model='post.title' required class="form-control" style="width: 200px;border-radius: 5%;"/><br />
     标签：<br />
-    <input type="text" name="tag1" ng-model='post.tag1'/><br />
-    <input type="text" name="tag2" ng-model='post.tag2'/><br />
-    <input type="text" name="tag3" ng-model='post.tag3'/><br />
+    <input type="text" name="tag1" ng-model='post.tag1' required class="form-control"style="width: 200px;border-radius: 5%;"//><br />
+    <input type="text" name="tag2" ng-model='post.tag2' required class="form-control"style="width: 200px;border-radius: 5%;"//><br />
+    <input type="text" name="tag3" ng-model='post.tag3' required class="form-control"style="width: 200px;border-radius: 5%;"//><br />
     正文：<br />
-    <textarea name="post" ng-model='post.post' rows="20" cols="100"></textarea><br />
+    <textarea name="post" ng-model='post.post' rows="20" cols="100" required class="form-control"></textarea><br />
     <input type="submit" value="保存修改"/>
 </form>
 </div>
